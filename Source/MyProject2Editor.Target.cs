@@ -11,5 +11,6 @@ public class MyProject2EditorTarget : TargetRules
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_1;
 		ExtraModuleNames.Add("MyProject2");
+		ExtraModuleNames.Add("MyProject2Editor");
 	}
 }
