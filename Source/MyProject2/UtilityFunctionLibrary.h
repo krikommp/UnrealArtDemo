@@ -15,6 +15,9 @@ class MYPROJECT2_API UUtilityFunctionLibrary : public UBlueprintFunctionLibrary
 	GENERATED_BODY()
 
 public:
+
+	UFUNCTION(BlueprintCallable)
+	static UTexture2D* CreateTexture2D(UObject* InOuter, int32 Width, int32 Height);
 	
 	UFUNCTION(BlueprintCallable)
 	static void ClearTexture2D(UTexture2D* Texture2D, const FLinearColor& ClearColor);

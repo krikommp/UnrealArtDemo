@@ -21,8 +21,11 @@ class FMyProject2EditorModule : public IModuleInterface {
 
 	virtual void ShutdownModule() override
 	{
-		IAssetTools& AssetTools = FModuleManager::Get().GetModuleChecked<FAssetToolsModule>("AssetTools").Get();
-		AssetTools.UnregisterAssetTypeActions(actionType.ToSharedRef());
+		if (FModuleManager::Get().IsModuleLoaded("AssetTools"))
+		{
+			IAssetTools& AssetTools = FModuleManager::GetModuleChecked<FAssetToolsModule>("AssetTools").Get();
+			AssetTools.UnregisterAssetTypeActions(actionType.ToSharedRef());
+		}
 	}
 
 private:
